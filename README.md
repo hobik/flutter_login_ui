@@ -35,7 +35,7 @@ To get started with this project, follow the instructions below.
 
 ### Installation
 
-1. Clone this repository to your local machine using `git clone https://github.com/your_username/flutter-login-ui.git`
+1. Clone this repository to your local machine using `git clone https://github.com/hobik/flutter_login_ui`
 2. Change directory to the project folder: `cd flutter-login-ui`
 3. Install the required dependencies with `flutter pub get`
 4. Run the app on your preferred device using `flutter run`
