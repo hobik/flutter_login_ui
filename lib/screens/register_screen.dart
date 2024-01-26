@@ -1,14 +1,15 @@
 import 'package:basic_flutter_project_ui/components/rounded_button.dart';
 import 'package:basic_flutter_project_ui/components/square_box.dart';
 import 'package:basic_flutter_project_ui/constant/app_text_style.dart';
+import 'package:basic_flutter_project_ui/screens/login_screen.dart';
 import 'package:basic_flutter_project_ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../components/rounded_input_field.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,8 @@ class LoginScreen extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.all(5),
                     padding: EdgeInsets.all(20),
-                    height: 320,
-                    width: 350,
+                    height: 360,
+                    width: 340,
                     decoration: BoxDecoration(
                         color: Color(0xffF3F3F5),
                         borderRadius: BorderRadius.circular(20)),
@@ -74,15 +75,20 @@ class LoginScreen extends StatelessWidget {
                           icon: Icons.lock,
                           onChange: (value) {},
                         ),
-                        Text(
-                          "Forgot Password ?",
-                          style: AppTextStyle.MINI_BOLD_DESCRIPTION_TEXT,
+                        RoundedInputField(
+                          isEmail: false,
+                          isPassword: true,
+                          hintText: "Repate Password",
+                          icon: Icons.lock,
+                          onChange: (value) {},
                         ),
+
                         RoundedButton(
-                          text: "LOGIN",
+                          text: "REGISTER",
                           press: () {},
                           color: Color(0xFF3F3D56),
-                        )
+                        ),
+
                         //InputText
                         //InputText
                         //Text
@@ -137,20 +143,21 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Not a member ?",
+                    "Already Have an Account? ",
                     style: AppTextStyle.MINI_DEFAULT_DESCRIPTION_TEXT,
                   ),
                   SizedBox(
-                    width: 4,
+                    width: 3,
                   ),
                   GestureDetector(
+                    behavior: HitTestBehavior.opaque,
                     onTap: () {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterScreen()));
+                              builder: (context) => const LoginScreen()));
                     },
-                    child: Text("Register Now",
+                    child: Text("Login",
                         style: AppTextStyle.MINI_DESCRIPTION_TEXT),
                   ),
                 ],
